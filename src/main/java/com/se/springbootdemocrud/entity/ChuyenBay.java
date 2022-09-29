@@ -1,87 +1,55 @@
 package com.se.springbootdemocrud.entity;
+import java.io.Serializable;
 
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Setter @Getter
+@NoArgsConstructor @AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "chuyenbay")
-public class ChuyenBay{
+public class ChuyenBay implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaCB")
-	private String MaCB;
-	@Column(name="Gadi")
-	private String GaDi;
-	private String GaDen;
-	private int DoDai;
-	private String GioDi;
-	private String GioDen;
-	private int ChiPhi;
-	public String getMaCB() {
-		return MaCB;
-	}
-	public void setMaCB(String maCB) {
-		MaCB = maCB;
-	}
-	public String getGaDi() {
-		return GaDi;
-	}
-	public void setGaDi(String gaDi) {
-		GaDi = gaDi;
-	}
-	public String getGaDen() {
-		return GaDen;
-	}
-	public void setGaDen(String gaDen) {
-		GaDen = gaDen;
-	}
-	public int getDoDai() {
-		return DoDai;
-	}
-	public void setDoDai(int doDai) {
-		DoDai = doDai;
-	}
-	public String getGioDi() {
-		return GioDi;
-	}
-	public void setGioDi(String gioDi) {
-		GioDi = gioDi;
-	}
-	public String getGioDen() {
-		return GioDen;
-	}
-	public void setGioDen(String gioDen) {
-		GioDen = gioDen;
-	}
-	public int getChiPhi() {
-		return ChiPhi;
-	}
-	public void setChiPhi(int chiPhi) {
-		ChiPhi = chiPhi;
-	}
-	public ChuyenBay(String maCB, String gaDi, String gaDen, int doDai, String gioDi, String gioDen, int chiPhi) {
-		super();
-		MaCB = maCB;
-		GaDi = gaDi;
-		GaDen = gaDen;
-		DoDai = doDai;
-		GioDi = gioDi;
-		GioDen = gioDen;
-		ChiPhi = chiPhi;
-	}
-	public ChuyenBay() {
-		super();
-	}
+	@Column(name = "macb")
+	private String maCB;
+	
+	@Column(name = "gadi")
+	private String gaDi;
+	
+	@Column(name = "gaden")
+	private String gaDen;
+	
+	@Column(name = "dodai")
+	private int doDai;
+	
+	@Column(name = "giodi")
+	private Date gioDi;
+	
+	@Column(name = "gioden")
+	private Date gioDen;
+	
+	@Column(name = "chiphi")
+	private int chiPhi;
+
 	@Override
 	public String toString() {
-		return "ChuyenBay [MaCB=" + MaCB + ", GaDi=" + GaDi + ", GaDen=" + GaDen + ", DoDai=" + DoDai + ", GioDi="
-				+ GioDi + ", GioDen=" + GioDen + ", ChiPhi=" + ChiPhi + "]";
+		return "ChuyenBay [maCB=" + maCB + ", gaDi=" + gaDi + ", gaDen=" + gaDen + ", doDai=" + doDai + ", gioDi="
+				+ gioDi + ", gioDen=" + gioDen + ", chiPhi=" + chiPhi + "]";
 	}
 	
 	

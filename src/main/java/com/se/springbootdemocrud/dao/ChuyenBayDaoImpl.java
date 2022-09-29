@@ -15,30 +15,72 @@ import com.se.springbootdemocrud.responsitory.ChuyenBayResponsitory;
 @Service
 public class ChuyenBayDaoImpl implements ChuyenBayDao {
 
-	@Autowired
-	private ChuyenBayResponsitory chuyenBayResponsitory;
+	@Autowired 
+	private ChuyenBayResponsitory chuyenBayRespository;
+@Override
+	public List<ChuyenBay> findByGaDen(String gaDen) {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findByGaDen(gaDen);
+	}
 
-	public ChuyenBayDaoImpl(ChuyenBayResponsitory chuyenBayResponsitory) {
-		super();
-		this.chuyenBayResponsitory = chuyenBayResponsitory;
-	}
-	
 	@Override
-	public List<ChuyenBay> getDsChuyenBay() {
-		List<ChuyenBay> listChuyenBay = chuyenBayResponsitory.findAll();
-		return listChuyenBay;
+	public List<ChuyenBay> findByDoDaiDBNhoHon10000VaLoHon8000() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findByDoDaiDBNhoHon10000VaLoHon8000();
 	}
+
 	@Override
-	public ChuyenBay getChuyenBayById(String id) {
-		ChuyenBay chuyenBay = chuyenBayResponsitory.findById(id).orElse(null);
-		return chuyenBay;
+	public List<ChuyenBay> findBySGtoBMT() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findBySGtoBMT();
 	}
-	 @Override
-	public ChuyenBay createChuyenBay(ChuyenBay chuyenBay) {
-		 System.out.println(chuyenBay);
-		
-		 chuyenBayResponsitory.save(chuyenBay);
-		 
-		 return chuyenBay;
+
+	@Override
+	public int sumCBFromSG() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.sumCBFromSG();
 	}
+
+	@Override
+	public List<ChuyenBay> findCBByMBAirbusA320() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findCBByMBAirbusA320();
+	}
+
+	@Override
+	public List<ChuyenBay> findDBFromAtoBAndToA() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findDBFromAtoBAndToA();
+	}
+
+	@Override
+	public List<Object[]> countChuyenBayKhoiHanh() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.countChuyenBayKhoiHanh();
+	}
+
+	@Override
+	public List<Object[]> tongChiPhiPhaiTra() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.tongChiPhiPhaiTra();
+	}
+
+	@Override
+	public List<ChuyenBay> findCBKHTruoc12h() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findCBKHTruoc12h();
+	}
+
+	@Override
+	public List<Object[]> countDiaDiemKhoiHanhTruoc12h() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.countDiaDiemKhoiHanhTruoc12h();
+	}
+
+	@Override
+	public List<ChuyenBay> findCBDuocLaiBoiBoeing() {
+		// TODO Auto-generated method stub
+		return chuyenBayRespository.findCBDuocLaiBoiBoeing();
+	}
+
 }

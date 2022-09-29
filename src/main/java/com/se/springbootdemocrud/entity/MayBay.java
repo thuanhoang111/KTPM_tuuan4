@@ -1,51 +1,45 @@
-package com.se.springbootdemocrud.entity;
+package com.springbootcruddemo.entity;
 
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter @Getter
+@NoArgsConstructor @AllArgsConstructor
 @Entity
 @Table(name = "maybay")
 public class MayBay implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	private int MaMB;
-	private String Loai;
-	private int TamBay;
-	public int getMaMB() {
-		return MaMB;
-	}
-	public void setMaMB(int maMB) {
-		MaMB = maMB;
-	}
-	public String getLoai() {
-		return Loai;
-	}
-	public void setLoai(String loai) {
-		Loai = loai;
-	}
-	public int getTamBay() {
-		return TamBay;
-	}
-	public void setTamBay(int tamBay) {
-		TamBay = tamBay;
-	}
-	public MayBay(int maMB, String loai, int tamBay) {
-		super();
-		MaMB = maMB;
-		Loai = loai;
-		TamBay = tamBay;
-	}
-	public MayBay() {
-		super();
-	}
+	@Column(name = "MaMB")
+	private int maMB;
+	@Column(name = "Loai")
+	private String loai;
+	@Column(name = "tambay")
+	private int tamBay;
+	
+	@OneToMany(mappedBy = "mayBay")
+	private List<ChungNhan> chungNhans;
+
 	@Override
 	public String toString() {
-		return "MayBay [MaMB=" + MaMB + ", Loai=" + Loai + ", TamBay=" + TamBay + "]";
+		return "MayBay [maMB=" + maMB + ", loai=" + loai + ", tamBay=" + tamBay + "]";
 	}
+
 
 	
 }
